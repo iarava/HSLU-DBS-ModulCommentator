@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="ModulCommentator.view.ModuleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModulCommentator.view"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleStyle}">Module</TextBlock>
+            <DockPanel Style="{StaticResource UserControlStackPanelStyle}">
+                <StackPanel DockPanel.Dock="Top">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="1" Grid.Row="0" Style="{StaticResource LabelStyle}" >Id</Label>
+                        <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource LabelStyle}" >Kürzel</Label>
+                        <Label Grid.Column="1" Grid.Row="2" Style="{StaticResource LabelStyle}" >Bezeichnung</Label>
+                        <Label Grid.Column="1" Grid.Row="3" Style="{StaticResource LabelStyle}" >Verantwortlicher</Label>
+
+
+                        <TextBlock Grid.Column="2" Grid.Row="0" Style="{StaticResource TextInputStyle}" Text="{Binding Path=Id}" Foreground="Gray"></TextBlock>
+                        <TextBox Grid.Column="2" Grid.Row="1" Style="{StaticResource TextInputStyle}" Text="{Binding Path=Kuerzel}" ></TextBox>
+                        <TextBox Grid.Column="2" Grid.Row="2" Style="{StaticResource TextInputStyle}" Text="{Binding Path=Bezeichnung}"></TextBox>
+                        <ComboBox Grid.Column="2" Grid.Row="3" Height="20" 
+                          DisplayMemberPath="email"
+                          SelectedValuePath="Id"
+                          ItemsSource="{Binding DozentenList}"
+                          SelectedItem="{Binding SelectedVerantwortlicher}"
+                         ></ComboBox>
+
+                        <TextBlock Grid.Column="5" Grid.Row="1"></TextBlock>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                        <Button Width="100" Height="25" Margin="20,0">Neu erstellen</Button>
+                        <Button Width="100" Height="25" Margin="20,0">Felder leeren</Button>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Bottom">
+                    <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Path=ModulListe}" Height="218" IsReadOnly="True">
+
+                    </DataGrid>
+                </StackPanel>
+
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

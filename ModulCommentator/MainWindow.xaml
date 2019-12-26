@@ -1,0 +1,29 @@
+﻿<Window x:Class="ModulCommentator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModulCommentator"
+        mc:Ignorable="d"
+        Title="Module Commentator Desktop Client" Height="450" Width="800">
+    <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Dozierende">
+                <UserControl Name="UCDozierende"></UserControl>
+            </TabItem>
+            <TabItem Header="Studierende">
+                <UserControl Name="UCStudierende"></UserControl>
+            </TabItem>
+            <TabItem Header="Kommentare">
+                <UserControl Name="UCKommentare"></UserControl>
+            </TabItem>
+            <TabItem Header="Module">
+                <UserControl Name="UCModule"></UserControl>
+            </TabItem>
+            <TabItem Header="Spezielle Abfragen">
+                <UserControl Name="UCSpecialQuery"></UserControl>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

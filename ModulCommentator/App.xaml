@@ -1,0 +1,25 @@
+﻿<Application x:Class="ModulCommentator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModulCommentator"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="TitleStyle">
+            <Setter Property="TextBlock.FontWeight" Value="Bold"></Setter>
+            <Setter Property="TextBlock.FontSize" Value="20"></Setter>
+            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style x:Key="UserControlStackPanelStyle">
+            <Setter Property="Border.Margin" Value="10"></Setter>
+        </Style>
+        <Style x:Key="LabelStyle">
+            <Setter Property="Border.Margin" Value="5"></Setter>
+            <Setter Property="TextBlock.Height" Value="25"></Setter>
+        </Style>
+        <Style x:Key="TextInputStyle">
+            <Setter Property="TextBlock.Margin" Value="3"></Setter>
+            <Setter Property="TextBlock.Height" Value="20"></Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>
